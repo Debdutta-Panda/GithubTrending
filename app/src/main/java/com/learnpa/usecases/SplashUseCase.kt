@@ -21,34 +21,8 @@ class SplashUseCase @Inject constructor(
 ) {
 
     operator fun invoke(): Flow<Command> = flow {
-        val l = repository.languages()
-        Log.d("fdlkfjsfjlf",l.toString())
         emit(Command(Action.LOADING))
-        var fetched = false
-        while(!fetched){
-            if(!netStat.current.on){
-                emit(Command(Action.OFFLINE))
-                netStat.waitForOnline()
-            }
-            emit(Command(Action.ONLINE))
-            delay(2000)
-            emit(Command(Action.LOADING))
-            val r = repository.getEndPoint()
-            emit(Command(Action.VALIDATING))
-            if(r!=null&&r.success&&(r.endPoint?.baseUrl?.isNotEmpty()==true)){
-                emit(Command(Action.SUCCESS))
-                fetched = true
-                dataStore.setBaseUrl(r.endPoint.baseUrl)
-                emit(Command(Action.DONE))
-                delay(1000)
-                emit(Command(Action.GO_TO_PAGE, Routes.Home))
-            }
-            else{
-                emit(Command(Action.FAILED))
-                delay(2000)
-                emit(Command(Action.RETRYING))
-                delay(2000)
-            }
-        }
+        delay(3000)
+        emit(Command(Action.GO_TO_PAGE, Routes.Home))
     }
 }

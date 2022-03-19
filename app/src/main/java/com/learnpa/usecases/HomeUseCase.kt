@@ -1,8 +1,10 @@
 package com.learnpa.usecases
 
+import android.util.Log
 import com.learnpa.repository.HomeRepository
 import com.learnpa.Resource
 import com.learnpa.models.ContentItem
+import com.learnpa.models.Repository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,13 +13,12 @@ import javax.inject.Inject
 class HomeUseCase @Inject constructor(
     private val repository: HomeRepository
 ) {
-    fun getContents(): Flow<Resource<List<ContentItem>>> = flow {
+    fun getContents(): Flow<Resource<List<Repository>>> = flow {
         emit(Resource.Loading())
-        //delay(5000)
-        val response = repository.getContents()
-        val contentItems = response.data?.contentItems
-        if(contentItems!=null){
-            emit(Resource.Success(contentItems))
+        val response = repository.repositories()
+        val repositories = response.data
+        if(repositories!=null){
+            emit(Resource.Success(repositories))
         }
         else{
             emit(Resource.Error(""))

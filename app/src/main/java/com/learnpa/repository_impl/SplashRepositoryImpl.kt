@@ -20,11 +20,5 @@ class SplashRepositoryImpl @Inject constructor(
             null
         }
     }
-    override suspend fun languages(): List<Language>{
-        return client.get{
-            url("https://github-trending.p.rapidapi.com/languages")
-            header("x-rapidapi-host", "github-trending.p.rapidapi.com")
-            header("x-rapidapi-key", "26a67c77b7mshea8eea1d7874b9dp1d5efejsnea1915fba247")
-        }
-    }
+
 }

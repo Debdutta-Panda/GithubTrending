@@ -12,12 +12,12 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.learnpa.Constants
-import com.learnpa.LottieView
+import com.learnpa.*
 import com.learnpa.R
-import com.learnpa.SpaceX
 import com.learnpa.viewmodels.SplashViewModel
 import com.learnpea.Routes
 import nl.frank.vmnc.ui.nav.NavRoute
@@ -44,9 +44,33 @@ fun SplashPage(
         Box(
             modifier = Modifier.fillMaxSize()
         ){
-            Anim()
-            Loader()
-            Logo(viewModel)
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+                    .align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ){
+                Image(
+                    painter = painterResource(R.drawable.ic_github_svgrepo_com),
+                    contentDescription = "Github",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp)
+                        .padding(24.dp)
+                )
+                LottieView(
+                    json = R.raw.trending1,
+                    iterations = Int.MAX_VALUE,
+                    modifier = Modifier
+                        .size(200.dp)
+                )
+                Text(
+                    R.string.github_trending.string,
+                    textAlign = TextAlign.Center,
+                    fontSize = 18.sp,
+                )
+            }
         }
     }
 

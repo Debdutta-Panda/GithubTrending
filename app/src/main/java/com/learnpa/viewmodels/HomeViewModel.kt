@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.learnpa.usecases.HomeUseCase
 import com.learnpa.Resource
 import com.learnpa.models.ContentItem
+import com.learnpa.models.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -29,7 +30,7 @@ class HomeViewModel @Inject constructor(
     private val _pageState = mutableStateOf(PageState.UNKNOWN)
     val pageState: State<PageState> = _pageState
 
-    val contents = mutableStateListOf<ContentItem>()
+    val contents = mutableStateListOf<Repository>()
 
     init {
         getHomeContent()

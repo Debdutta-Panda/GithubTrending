@@ -5,6 +5,5 @@ import com.learnpa.models.Language
 
 interface SplashRepository {
 
-    suspend fun languages(): List<Language>
     suspend fun getEndPoint(): EndPointResponse?
 }

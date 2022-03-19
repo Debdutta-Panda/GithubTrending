@@ -15,7 +15,3 @@ dependencyResolutionManagement {
 rootProject.name = "LearnPea"
 include ':app'
 include ':core'
-include ':jlatexmath-font-greek'
-include ':jlatexmath-font-cyrillic'
-include ':ArticleView'
-include ':jlatexmath'

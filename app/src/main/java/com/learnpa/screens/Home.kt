@@ -16,18 +16,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.algogence.articleview.J
-import com.algogence.articleview.RenderView
-import com.algogence.articleview.Res
-import com.algogence.articleview.svg.utils.Style
 import com.learnpa.app.MyApplication
 import com.learnpa.ui.theme.TopBarBackground
 import com.learnpa.viewmodels.HomeViewModel
 import com.learnpea.Routes
+import com.skydoves.landscapist.glide.GlideImage
 import kotlinx.coroutines.launch
 import nl.frank.vmnc.ui.nav.NavRoute
 
@@ -47,11 +45,6 @@ object HomeRoute : NavRoute<HomeViewModel> {
 fun HomePage(
     viewModel: HomeViewModel
 ){
-    val res = remember {
-        Res(
-            soundWave = MyApplication.instance?.drawableResource(R.drawable.ic_sound_svgrepo_com)
-        )
-    }
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     val scope = rememberCoroutineScope()
     Scaffold(
@@ -64,7 +57,7 @@ fun HomePage(
             TopAppBar(
                 title = {
                     Text(
-                        "LearnPea",
+                        "Github Trending",
                         color = Color.White
                     )
                 },
@@ -109,7 +102,19 @@ fun HomePage(
                 HomeViewModel.PageState.DATA -> {
                     LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = PaddingValues(12.dp)){
                         items(viewModel.contents){
-                            RenderView(J(it.content),res)
+                            Card(
+                                modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(12.dp)
+                            ){
+                                Row(
+                                    modifier = Modifier.fillMaxWidth().wrapContentHeight()
+                                ){
+                                    GlideImage(
+                                        imageModel = it.avatar,
+                                        contentScale = ContentScale.Crop,
+                                        modifier = Modifier.size(100.dp)
+                                    )
+                                }
+                            }
                         }
                     }
                 }

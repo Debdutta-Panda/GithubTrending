@@ -10,12 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ArticleView" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/jlatexmath" />
-            <option value="$PROJECT_DIR$/jlatexmath-font-cyrillic" />
-            <option value="$PROJECT_DIR$/jlatexmath-font-greek" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
