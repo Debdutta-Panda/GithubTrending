@@ -7,7 +7,7 @@
 
 # Highlights
 
-- Kotlin, official programming language for Android Development
+- Kotlin, official programming language for Android Development [https://kotlinlang.org/](https://kotlinlang.org/)
 - Clean Architecture (proposed by Uncle Bob, Robert C. Martin)
 [https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - Dependency Injection
