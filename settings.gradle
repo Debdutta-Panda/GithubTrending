@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "LearnPea"
+include ':app'
+include ':core'
+include ':jlatexmath-font-greek'
+include ':jlatexmath-font-cyrillic'
+include ':ArticleView'
+include ':jlatexmath'

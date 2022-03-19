@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LearnPea</string>
+    <string name="logo">Logo</string>
+    <string name="error_string">Error</string>
+    <string name="loading">Loading...</string>
+    <string name="you_are_offline">You are offline :(</string>
+    <string name="yay">Yay!</string>
+    <string name="just_a_minute">Just a minute</string>
+    <string name="something_went_wrong">Something went wrong :(</string>
+    <string name="great_you_are_online">Great you are online</string>
+    <string name="let_me_look_into_that">Let me look into that</string>
+    <string name="great_job">Great job 👋</string>
+    <string name="try_again">Try again</string>
+</resources>

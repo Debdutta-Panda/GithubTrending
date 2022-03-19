@@ -1,0 +1,4 @@
+# Project exclude paths
+/.gradle/
+/jlatexmath/build/
+/jlatexmath/build/intermediates/javac/debug/classes/
