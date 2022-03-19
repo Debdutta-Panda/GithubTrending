@@ -4,7 +4,7 @@
 
 > An application to showcase Android best practices, modern approaches, architecture etc. The purpose of the application is to show trending repositories in Github
 > 
-
+https://lopsided-snowplow-7f3.notion.site/Github-Trending-a10e7d45c83d4938a154ad33196b7427
 # Highlights
 
 - Kotlin, official programming language for Android Development [https://kotlinlang.org/](https://kotlinlang.org/)
