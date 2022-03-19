@@ -42,6 +42,7 @@ fun LearnPeaTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
     MaterialTheme(
         colors = colors,
         typography = Typography(
+
             body1 = TextStyle(
                 fontFamily = FontFamily(
                     Constants.Fonts.Montserrat

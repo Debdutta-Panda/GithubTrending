@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.Scaffold
+import androidx.compose.ui.graphics.Color
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -23,7 +24,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberAnimatedNavController()
             LearnPeaTheme {
-                Scaffold {
+                Scaffold(
+                    contentColor = Color.Black
+                ) {
                     NavigationComponent(navController, it)
                 }
             }

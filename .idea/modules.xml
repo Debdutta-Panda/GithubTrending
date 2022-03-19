@@ -3,12 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/LearnPea.iml" filepath="$PROJECT_DIR$/.idea/modules/LearnPea.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ArticleView/LearnPea.ArticleView.iml" filepath="$PROJECT_DIR$/.idea/modules/ArticleView/LearnPea.ArticleView.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/LearnPea.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/LearnPea.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/LearnPea.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/LearnPea.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlatexmath/LearnPea.jlatexmath.iml" filepath="$PROJECT_DIR$/.idea/modules/jlatexmath/LearnPea.jlatexmath.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlatexmath-font-cyrillic/LearnPea.jlatexmath-font-cyrillic.iml" filepath="$PROJECT_DIR$/.idea/modules/jlatexmath-font-cyrillic/LearnPea.jlatexmath-font-cyrillic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlatexmath-font-greek/LearnPea.jlatexmath-font-greek.iml" filepath="$PROJECT_DIR$/.idea/modules/jlatexmath-font-greek/LearnPea.jlatexmath-font-greek.iml" />
     </modules>
   </component>
 </project>

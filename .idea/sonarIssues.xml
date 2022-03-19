@@ -73,11 +73,6 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/../Katex/app/src/main/java/hourglass/github/in/katex/activities/MainActivity.java">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/ArticleView/src/main/java/com/algogence/articleview/ArticleView.kt">
           <value>
             <set />
@@ -278,6 +273,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/learnpa/models/Repository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/learnpa/models/Response.kt">
           <value>
             <set />
@@ -464,6 +464,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/katexmathview/src/main/java/katex/hourglass/in/mathlib/MathView.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Katex/app/src/main/java/hourglass/github/in/katex/activities/MainActivity.java">
           <value>
             <set />
           </value>

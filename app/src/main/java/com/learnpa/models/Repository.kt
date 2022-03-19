@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Repository (
-
+  var id                 : Int = 0,
   val author             : String?            = null,
   val name               : String?            = null,
   val avatar             : String?            = null,
@@ -15,7 +15,7 @@ data class Repository (
   val stars              : Int?               = null,
   val forks              : Int?               = null,
   val currentPeriodStars : Int?               = null,
-  val builtBy            : ArrayList<BuiltBy> = arrayListOf()
+  val builtBy            : ArrayList<BuiltBy> = arrayListOf(),
 )
 
 @Serializable
