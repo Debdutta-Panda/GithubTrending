@@ -30,6 +30,11 @@ class HomeViewModel @Inject constructor(
     private val _pageState = mutableStateOf(PageState.UNKNOWN)
     val pageState: State<PageState> = _pageState
 
+    private val _searchMode = mutableStateOf(false)
+    val searchMode: State<Boolean> = _searchMode
+
+    val searchText = mutableStateOf("")
+    val mainRepo = mutableStateListOf<Repository>()
     val contents = mutableStateListOf<Repository>()
 
     init {
@@ -60,5 +65,30 @@ class HomeViewModel @Inject constructor(
 
     fun onTryAgainClicked() {
         getHomeContent()
+    }
+
+    fun onSearchOrCloseClick() {
+        _searchMode.value = !_searchMode.value
+    }
+
+    fun onSearch() {
+        _searchMode.value = false
+        val text = searchText.value.lowercase()
+        mainRepo.clear()
+        mainRepo.addAll(contents)
+        contents.clear()
+        val filtered = mainRepo.filter {
+            val name = it.name?:"".lowercase()
+            val author = it.author?:"".lowercase()
+            val builtBys = it.builtBy.map {
+                it.username?:"".lowercase()
+            }
+            name.contains(text)||author.contains(text)||builtBys.contains(text)
+        }
+        contents.addAll(filtered)
+    }
+
+    fun clearSearchText() {
+        searchText.value = ""
     }
 }

@@ -15,6 +15,7 @@ class HomeUseCase @Inject constructor(
 ) {
     fun getContents(): Flow<Resource<List<Repository>>> = flow {
         emit(Resource.Loading())
+        delay(2000)
         val response = repository.repositories()
         val repositories = response.data
         if(repositories!=null){

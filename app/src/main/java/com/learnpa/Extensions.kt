@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.preferencesDataStore
@@ -46,3 +47,10 @@ val Int.resourceColor: Int
 get(){
     return MyApplication.instance?.colorResource(this)?:0
 }
+
+fun Color.Companion.parse(colorString: String): Color =
+    try {
+        Color(color = android.graphics.Color.parseColor(colorString))
+    } catch (e: Exception) {
+        Color.Unspecified
+    }
