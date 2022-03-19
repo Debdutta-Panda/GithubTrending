@@ -1,24 +1,17 @@
 package com.learnpa.di
 
-import android.content.Context
 import android.util.Log
-import com.learnpa.repository.HomeRepository
-import com.learnpa.repository_impl.SplashRepositoryImpl
-import com.learnpa.repository.DataStore
-import com.learnpa.repository.NetStat
-import com.learnpa.repository.SplashRepository
-import com.learnpa.repository_impl.DataStoreImpl
-import com.learnpa.repository_impl.HomeRepositoryImpl
-import com.learnpa.repository_impl.NetStatImpl
+import com.learnpa.repository.HomeRepositoryImpl
+import com.learnpa.repository.NetStatImpl
+import com.learnpea.repository.HomeRepository
+import com.learnpea.repository.NetStat
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import io.ktor.client.*
-import io.ktor.client.call.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.*
 import io.ktor.client.features.json.*
@@ -26,7 +19,6 @@ import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import nl.frank.vmnc.ui.nav.MyRouteNavigator
 import nl.frank.vmnc.ui.nav.RouteNavigator
-import java.net.UnknownHostException
 import javax.inject.Singleton
 
 @Module
@@ -34,13 +26,8 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun provideCoinRepository(client: HttpClient,dataStore: DataStore): HomeRepository {
-        return HomeRepositoryImpl(client,dataStore)
-    }
-    @Provides
-    @Singleton
-    fun provideSplashRepository(apiClient: HttpClient): SplashRepository {
-        return SplashRepositoryImpl(apiClient)
+    fun provideHomeRepository(apiClient: HttpClient): HomeRepository {
+        return HomeRepositoryImpl(apiClient)
     }
 
     @Provides
@@ -64,12 +51,6 @@ object AppModule {
                 serializer = KotlinxSerializer()
             }
         }
-    }
-
-    @Singleton
-    @Provides
-    fun provideDataStore(@ApplicationContext appContext: Context): DataStore {
-        return DataStoreImpl(appContext)
     }
 
     @Singleton

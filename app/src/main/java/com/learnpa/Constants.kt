@@ -4,9 +4,11 @@ import androidx.compose.ui.text.font.Font
 
 object Constants {
 
-    const val BASE_URL = "https://api.coinpaprika.com/"
-
-    const val PARAM_ITEM_ID = "itemId"
+    const val REPOSITORIES_END_KEY = "repositories"
+    const val API_HOST_KEY = "x-rapidapi-host"
+    const val API_HOST_API_KEY_KEY = "x-rapidapi-key"
+    const val API_HOST_API_KEY = "26a67c77b7mshea8eea1d7874b9dp1d5efejsnea1915fba247"
+    const val API_HOST = "github-trending.p.rapidapi.com"
 
     object Dimens{
         const val SPLASH_LOGO_SIZE = 100

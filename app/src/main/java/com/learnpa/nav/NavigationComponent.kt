@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.learnpa.*
-import com.learnpa.screens.SplashRoute
+import com.learnpa.presentation.screens.SplashRoute
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable

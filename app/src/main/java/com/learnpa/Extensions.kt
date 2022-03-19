@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.preferencesDataStore
 import com.learnpa.app.MyApplication
 import java.util.prefs.Preferences
 

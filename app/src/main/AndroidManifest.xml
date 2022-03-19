@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnPea">
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.learnpa.presentation.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.LearnPea">
@@ -25,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="repositories"
+            android:value="https://github-trending.p.rapidapi.com/repositories" />
     </application>
 
 </manifest>

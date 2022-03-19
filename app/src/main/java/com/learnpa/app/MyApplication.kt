@@ -12,7 +12,9 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.learnpa.ConnectivityListener
+import com.learnpa.Metar
 import com.learnpa.R
+import com.learnpea.models.Net
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
@@ -20,7 +22,7 @@ class MyApplication : Application(){
     override fun onCreate() {
         super.onCreate()
         instance = this
-
+        Metar.initialize(this)
         ConnectivityListener(this).net.observeForever {
             _connectivity.postValue(it)
         }
@@ -28,10 +30,10 @@ class MyApplication : Application(){
 
 
     companion object {
-        var net: ConnectivityListener.Net = ConnectivityListener.Net()
+        var net: Net = Net()
         var instance: MyApplication? = null
-        private val _connectivity = MutableLiveData<ConnectivityListener.Net>()
-        val connectivity: LiveData<ConnectivityListener.Net> = _connectivity
+        private val _connectivity = MutableLiveData<Net>()
+        val connectivity: LiveData<Net> = _connectivity
         init {
             connectivity.observeForever { result->
                 net.on = result.on
@@ -41,11 +43,11 @@ class MyApplication : Application(){
                 }
             }
         }
-        private val connectivityListeners = mutableListOf<(ConnectivityListener.Net)->Unit>()
-        fun registerConnectivityListener(listener: (ConnectivityListener.Net)->Unit){
+        private val connectivityListeners = mutableListOf<(Net)->Unit>()
+        fun registerConnectivityListener(listener: (Net)->Unit){
             connectivityListeners.add(listener)
         }
-        fun unRegisterConnectivityListener(listener: (ConnectivityListener.Net)->Unit){
+        fun unRegisterConnectivityListener(listener: (Net)->Unit){
             connectivityListeners.remove(listener)
         }
     }

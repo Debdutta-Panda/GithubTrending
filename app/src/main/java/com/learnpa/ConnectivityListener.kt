@@ -9,10 +9,11 @@ import android.net.Network
 import android.os.Build
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.MutableLiveData
+import com.learnpea.models.Net
 
 class ConnectivityListener(private val context: Context) {
 
-    class Net(var on: Boolean = false, var metered: Boolean = false)
+
 
     val net = MutableLiveData<Net>()
 
