@@ -25,15 +25,3 @@ https://lopsided-snowplow-7f3.notion.site/Github-Trending-a10e7d45c83d4938a154ad
 # APK
 
 https://github.com/Debdutta-Panda/GithubTrending/blob/main/GithubTrending.apk
-
-# Author
-
-Debdutta Panda, Android Developer
-
-bedmad82@gmail.com
-
-8967114927, 6290721134
-
-https://debduttapanda.com
-
-https://www.linkedin.com/in/debdutta-panda-755349a0/
